@@ -1,8 +1,8 @@
 class Dom {
   constructor(selector) {
-    this.$el = typeof selector === 'string' 
-    ? document.querySelector(selector) 
-    : selector
+    this.$el = typeof selector === 'string'
+      ? document.querySelector(selector)
+      : selector
   }
 
   html(html) {
@@ -13,20 +13,20 @@ class Dom {
     return this.$el.outerHTML.trim()
   }
 
+  clear() {
+    this.html('')
+    return this
+  }
+
   text(text) {
     if (typeof text !== 'undefined') {
       this.$el.textContent = text
       return this
     }
-    if (this.$el.tagName.toLowerCase() === 'input'){
+    if (this.$el.tagName.toLowerCase() === 'input') {
       return this.$el.value.trim()
     }
     return this.$el.textContent.trim()
-  }
-
-  clear() {
-    this.html('')
-    return this
   }
 
   on(eventType, callback) {
@@ -45,11 +45,13 @@ class Dom {
     if (node instanceof Dom) {
       node = node.$el
     }
+
     if (Element.prototype.append) {
       this.$el.append(node)
     } else {
       this.$el.appendChild(node)
     }
+
     return this
   }
 
@@ -70,9 +72,11 @@ class Dom {
   }
 
   css(styles = {}) {
-    Object.keys(styles).forEach(key => {
-       this.$el.style[key] = styles[key]
-    })
+    Object
+        .keys(styles)
+        .forEach(key => {
+          this.$el.style[key] = styles[key]
+        })
   }
 
   getStyles(styles = []) {
@@ -116,8 +120,6 @@ class Dom {
     return this
   }
 }
-
-
 
 export function $(selector) {
   return new Dom(selector)

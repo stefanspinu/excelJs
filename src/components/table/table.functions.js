@@ -1,10 +1,10 @@
-import { range } from "@core/utils";
+import {range} from '@core/utils'
 
-export function shouldResize (event) {
+export function shouldResize(event) {
   return event.target.dataset.resize
 }
 
-export function isCell (event) {
+export function isCell(event) {
   return event.target.dataset.type === 'cell'
 }
 
@@ -23,15 +23,15 @@ export function matrix($target, $current) {
 export function nextSelector(key, {col, row}) {
   const MIN_VALUE = 0
   switch (key) {
-    case 'Enter' : 
-    case 'ArrowDown' :
+    case 'Enter':
+    case 'ArrowDown':
       row++
       break
     case 'Tab':
     case 'ArrowRight':
       col++
       break
-    case 'ArrowLeft': 
+    case 'ArrowLeft':
       col = col - 1 < MIN_VALUE ? MIN_VALUE : col - 1
       break
     case 'ArrowUp':

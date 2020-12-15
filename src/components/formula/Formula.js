@@ -1,5 +1,5 @@
-import { ExcelComponent } from "@core/ExcelComponent";
-import { $ } from "@core/dom";
+import {ExcelComponent} from '@core/ExcelComponent'
+import {$} from '@core/dom'
 
 export class Formula extends ExcelComponent {
   static className = 'excel__formula'
@@ -15,8 +15,8 @@ export class Formula extends ExcelComponent {
 
   toHTML() {
     return `
-    <div class="info">fx</div>
-    <div  id="formula" class="input" contenteditable spellcheck="false"></div>
+      <div class="info">fx</div>
+      <div id="formula" class="input" contenteditable spellcheck="false"></div>
     `
   }
 

@@ -3,7 +3,7 @@ import { Formula } from './components/formula/Formula';
 import { Header } from './components/header/Header';
 import { Table } from './components/table/Table';
 import { Toolbar } from './components/toolbar/Toolbar';
-import { createStore } from './core/createStore';
+import { createStore } from './core/store/createStore';
 import { Router } from './core/routes/Router';
 import { storage, debounce } from './core/utils';
 import { DashboardPage } from './pages/DashboardPage';
